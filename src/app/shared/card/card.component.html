@@ -9,7 +9,6 @@
 </div>
 
 <div class="children" *ngIf="people.children">
-  <!-- <ng-template *ngFor="let person of people"> -->
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let person of people.children">
       <app-card [people]="person"></app-card>
