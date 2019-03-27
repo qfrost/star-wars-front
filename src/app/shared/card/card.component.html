@@ -1,0 +1,18 @@
+<div>
+  {{people.name}}
+
+  <div class="btn-group">
+    <button type="button" (click)="addChildren(people)" class="btn btn-success">Add</button>
+    <button type="button" class="btn btn-info">Edit</button>
+    <button type="button" (click)="removeChildren(people)" class="btn btn-danger">Danger</button>
+  </div>
+</div>
+
+<div class="children" *ngIf="people.children">
+  <!-- <ng-template *ngFor="let person of people"> -->
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let person of people.children">
+      <app-card [people]="person"></app-card>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,16 @@
+<!-- <div class="form-group">
+  <label class="form-label" for="parent">Name parent</label>
+  <input type="text" class="form-control" id="parent" [formControl]="parent" placeholder="Enter name">
+</div> -->
+
+<button type="submit" class="btn btn-primary" (click)="addPerson()">Add +</button>
+
+<h1 class="title">Tree of Object</h1>
+
+<div class="list-wrap" *ngFor="let person of people">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <app-card [people]="person"></app-card>
+    </li>
+  </ul>
+</div>

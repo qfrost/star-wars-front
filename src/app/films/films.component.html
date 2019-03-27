@@ -1,0 +1,8 @@
+<div class="card-wrap" *ngFor="let film of films">
+  <div class="card-item">
+    {{ film.name }}
+  </div>
+  <div class="card-wrap" *ngFor="let item of film.films">
+    {{ item.name }}
+  </div>
+</div>
