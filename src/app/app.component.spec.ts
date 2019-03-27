@@ -1,12 +1,29 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HelperService } from './core/services/helper.service';
+import { AppStorageService } from './core/services/app-storage.service';
+import { PeopleService } from './core/services/people.service';
+import { FilmsService } from './core/services/films.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        CoreModule,
+        SharedModule,
+        FormsModule,
+        ReactiveFormsModule
+      ],
+      providers: [
+        HelperService,
+        PeopleService,
+        AppStorageService,
+        FilmsService
       ],
       declarations: [
         AppComponent
@@ -18,18 +35,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'front-star-wars'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('front-star-wars');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to front-star-wars!');
   });
 });

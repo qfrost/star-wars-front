@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AppStorageService } from './app-storage.service';
 import { HelperService } from './helper.service';
-import { HttpClient } from '@angular/common/http';
 import { AppModels } from '../model/app.models';
 
 @Injectable({
@@ -9,7 +8,7 @@ import { AppModels } from '../model/app.models';
 })
 export class FilmsService {
 
-  constructor(protected _http: HttpClient, protected _app_storage: AppStorageService, protected _helper: HelperService) { }
+  constructor(protected _app_storage: AppStorageService, protected _helper: HelperService) { }
 
   public set setFilms(films: AppModels.IFilms[]) {
     this._helper.putToLocalStorage('films', films);

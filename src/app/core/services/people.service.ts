@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { AppStorageService } from './app-storage.service';
 import { HelperService } from './helper.service';
 import { AppModels } from '../model/app.models';
@@ -9,7 +8,7 @@ import { AppModels } from '../model/app.models';
 })
 export class PeopleService {
 
-  constructor(protected _http: HttpClient, protected _app_storage: AppStorageService, protected _helper: HelperService) { }
+  constructor(protected _app_storage: AppStorageService, protected _helper: HelperService) { }
 
   public set setPeople(people: AppModels.IPerson[]) {
     this._helper.putToLocalStorage('people', people);
